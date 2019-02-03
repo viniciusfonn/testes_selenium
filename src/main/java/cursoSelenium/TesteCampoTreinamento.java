@@ -108,6 +108,8 @@ public class TesteCampoTreinamento {
 		 
 		 Assert.assertTrue(encontrou);
 		 
+		 driver.quit();
+		 
 		 
 	}
 	
@@ -157,7 +159,7 @@ public class TesteCampoTreinamento {
 		 driver.findElement(By.linkText("Voltar")).click();
 		// Assert.fail();
 		 
-		 Assert.assertEquals("Voltou", driver.findElement(By.id("resultado")).getText());
+		 Assert.assertEquals("Voltou!", driver.findElement(By.id("resultado")).getText());
 		 
 		 driver.quit();
 		 

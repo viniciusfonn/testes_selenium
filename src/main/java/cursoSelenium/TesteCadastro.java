@@ -1,6 +1,7 @@
 package cursoSelenium;
 
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -9,12 +10,20 @@ import org.openqa.selenium.support.ui.Select;
 
 public class TesteCadastro {
 	
+	private WebDriver driver;
+	
+	
+	@Before
+	public void inicializa() {
+		driver = new ChromeDriver(); 
+		 driver.manage().window().maximize();
+		 driver.get("file:///" +  System.getProperty("user.dir") + "/src/main/resources/componentes.html");
+	}
+	
 	
 	@Test
 	public void testeCadastro() {
-		 WebDriver driver = new ChromeDriver(); 
-		 driver.manage().window().maximize();
-		 driver.get("file:///" +  System.getProperty("user.dir") + "/src/main/resources/componentes.html");
+		 
 		 
 		 driver.findElement(By.id("elementosForm:nome")).sendKeys("Vinicius");
 		 driver.findElement(By.id("elementosForm:sobrenome")).sendKeys("Fonseca");
